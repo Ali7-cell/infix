@@ -6,8 +6,7 @@
     "nodejs_compat"
   ],
   "assets": {
-    "directory": ".next",
-    "binding": "ASSETS"
+    "directory": "out"
   },
   "vars": {
     "NODE_ENV": "production"
