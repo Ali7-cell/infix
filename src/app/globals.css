@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Wood & Gold Color Palette */
+  --wood-dark: #3B1F12;
+  --wood-walnut: #5A2E19;
+  --wood-natural: #8B572F;
+  --wood-light: #B8793F;
+  --gold-accent: #D6A447;
+  --gold-light: #F1D18A;
+  --gold-dark: #A97A24;
+  --bg-cream: #FAF5EC;
+  --bg-beige: #EFE3D0;
+  --text-main: #2B180F;
+  --text-muted: #725B49;
+  --white: #FFFFFF;
+  --border-wood: #D9C4A5;
+  --border-wood-subtle: #E8DCCB;
+
+  /* Legacy mapping overrides for consistency */
+  --primary-purple: #8B572F;
+  --primary-purple-hover: #5A2E19;
+  --sidebar-bg: #2B180F;
+  --pos-bg: #FAF5EC;
+}
+
+@theme inline {
+  --color-primary: #8B572F;
+  --color-primary-dark: #5A2E19;
+  --color-gold: #D6A447;
+  --color-cream: #FAF5EC;
+  --color-beige: #EFE3D0;
+  --color-wood-dark: #3B1F12;
+  --color-wood-walnut: #5A2E19;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Elegant Heading & Brand Font */
+h1, h2, h3, .font-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   REALISTIC WOODEN BUTTON SYSTEM (Inspired by Zaad Reference)
+   ========================================================= */
+
+/* Signature Wooden Button - Dark Walnut & Beveled Edge */
+.btn-wood,
+.btn-wood-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, #9C6233 0%, #7A4722 28%, #5C3214 65%, #3F200C 100%);
+  color: #FFF6E5 !important;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1.5px solid #C99745;
+  box-shadow: 
+    0 2px 4px rgba(30, 14, 6, 0.25),
+    0 5px 12px rgba(45, 20, 8, 0.35),
+    inset 0 1.5px 1px rgba(255, 230, 170, 0.45),
+    inset 0 -2.5px 3px rgba(20, 9, 3, 0.6);
+  text-shadow: 0 1px 2px rgba(15, 6, 2, 0.85);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.btn-wood:hover,
+.btn-wood-primary:hover {
+  background: linear-gradient(180deg, #A86D3B 0%, #865027 28%, #663917 65%, #46250F 100%);
+  border-color: #E2B35C;
+  color: #FFFFFF !important;
+  box-shadow: 
+    0 4px 10px rgba(30, 14, 6, 0.3),
+    0 8px 18px rgba(45, 20, 8, 0.4),
+    0 0 14px rgba(214, 164, 71, 0.35),
+    inset 0 2px 2px rgba(255, 240, 195, 0.6),
+    inset 0 -2.5px 3px rgba(20, 9, 3, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-wood:active,
+.btn-wood-primary:active {
+  background: linear-gradient(180deg, #6C3A16 0%, #562D11 40%, #44220B 100%);
+  box-shadow: 
+    0 1px 3px rgba(30, 14, 6, 0.4),
+    inset 0 3px 4px rgba(15, 6, 2, 0.75),
+    inset 0 -1px 1px rgba(255, 230, 170, 0.2);
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn-wood:disabled,
+.btn-wood-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(40%);
+  transform: none !important;
+  box-shadow: none;
+}
+
+/* Pill Wooden Button (Matches the rounded horizontal buttons in reference) */
+.btn-wood-pill {
+  border-radius: 9999px !important;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Circular Round Wooden Button (Matches "Order Now" plate in reference) */
+.btn-wood-circle {
+  border-radius: 9999px !important;
+  aspect-ratio: 1 / 1;
+  border: 2.5px solid #D6A447;
+  box-shadow: 
+    0 4px 10px rgba(30, 14, 6, 0.35),
+    0 8px 20px rgba(40, 18, 7, 0.3),
+    inset 0 2px 2px rgba(255, 235, 180, 0.5),
+    inset 0 -3px 4px rgba(20, 9, 3, 0.7);
+}
+
+/* Secondary Button - Warm Cream Surface with Wooden Border */
+.btn-wood-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: #3B1F12;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--border-wood);
+  box-shadow: 0 1px 3px rgba(59, 31, 18, 0.06);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-wood-secondary:hover {
+  background: #FAF5EC;
+  border-color: #B8793F;
+  color: #2B180F;
+  box-shadow: 0 3px 8px rgba(59, 31, 18, 0.12);
+  transform: translateY(-1px);
+}
+
+.btn-wood-secondary:active {
+  background: #EFE3D0;
+  transform: translateY(0);
+}
+
+/* Golden Accent Button */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #F5D794 0%, #D6A447 45%, #B78229 100%);
+  color: #2B180F !important;
+  font-weight: 800;
+  border-radius: 0.75rem;
+  border: 1.5px solid #F8E2AC;
+  box-shadow: 
+    0 2px 6px rgba(183, 130, 41, 0.35),
+    0 6px 14px rgba(45, 20, 8, 0.2),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 2px rgba(140, 95, 20, 0.4);
+  text-shadow: 0 1px 0 rgba(255, 245, 215, 0.6);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F9E2AC 0%, #E2B254 45%, #C28E31 100%);
+  box-shadow: 
+    0 4px 12px rgba(183, 130, 41, 0.5),
+    0 0 16px rgba(241, 209, 138, 0.6),
+    inset 0 2px 2px rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+/* Outline Wooden Button */
+.btn-wood-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #5A2E19;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1.5px solid #B8793F;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-wood-outline:hover {
+  background: #FAF5EC;
+  border-color: #5A2E19;
+  color: #3B1F12;
+  box-shadow: 0 2px 6px rgba(59, 31, 18, 0.1);
+}
+
+/* Destructive / Danger Wooden Button (Mahogany red-wood) */
+.btn-wood-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, #B53A30 0%, #8D251D 50%, #681711 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1.5px solid #D66358;
+  box-shadow: 
+    0 2px 6px rgba(104, 23, 17, 0.35),
+    inset 0 1.5px 1px rgba(255, 190, 185, 0.4),
+    inset 0 -2px 2px rgba(45, 10, 7, 0.6);
+  text-shadow: 0 1px 2px rgba(40, 8, 6, 0.8);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-wood-danger:hover {
+  background: linear-gradient(180deg, #C5443A 0%, #9E2B22 50%, #761C16 100%);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CARDS, PANELS, FORMS & BADGES
+   ========================================================= */
+
+/* Warm White Wooden Card */
+.wood-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-wood);
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(59, 31, 18, 0.04), 0 6px 16px rgba(59, 31, 18, 0.03);
+  transition: all 0.25s ease;
+}
+
+.wood-card:hover {
+  border-color: #B8793F;
+  box-shadow: 0 4px 12px rgba(59, 31, 18, 0.08), 0 10px 24px rgba(59, 31, 18, 0.05);
+}
+
+/* Dark Walnut Luxury Wood Panel (For headers & sidebar) */
+.wood-panel-dark {
+  background: linear-gradient(180deg, #2D1409 0%, #3B1F12 50%, #241108 100%);
+  border-color: rgba(214, 164, 71, 0.2);
+}
+
+/* Form Inputs with Warm Gold Focus */
+.wood-input {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-wood);
+  color: var(--text-main);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8125rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.wood-input:focus {
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 3px rgba(214, 164, 71, 0.2);
+  background-color: #FFFEFA;
+}
+
+/* Gold Metallic Badge */
+.badge-gold {
+  background: #FAF5EC;
+  color: #7A4722;
+  border: 1px solid #D6A447;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.6875rem;
+  box-shadow: 0 1px 2px rgba(214, 164, 71, 0.15);
+}
+
+/* Custom Scrollbars in Warm Wood / Cream */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F2E7D5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2A484;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B572F;
+}
+
+/* Thermal Receipt Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt, #thermal-receipt * {
+    visibility: visible;
+  }
+  #thermal-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+}

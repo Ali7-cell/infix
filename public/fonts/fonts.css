@@ -1,0 +1,50 @@
+/* =================================================================
+   CRAVBURGERS — Font Definitions
+   -----------------------------------------------------------------
+   Two display fonts used across the site:
+     1. Modak         — chunky, rounded display face for big headings
+     2. Mouse Memoirs — handwritten, friendly face for labels/buttons
+   Both loaded as woff2 (subset) + ttf (full) for fallback.
+   ================================================================= */
+
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Modak.subset-latin.woff2') format('woff2'),
+       url('./Modak.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+                 U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Mouse Memoirs';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./MouseMemoirs.subset-latin.woff2') format('woff2'),
+       url('./MouseMemoirs.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+                 U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Tailwind-style utility classes (so `font-modak` / `font-mouse-memoirs` work) */
+.font-modak {
+  font-family: 'Modak', 'Modak Fallback', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.font-mouse-memoirs {
+  font-family: 'Mouse Memoirs', 'Mouse Memoirs Fallback', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Default body uses Mouse Memoirs (friendly UI text) */
+body {
+  font-family: 'Mouse Memoirs', system-ui, sans-serif;
+}

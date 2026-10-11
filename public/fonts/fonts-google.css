@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/modak/v21/EJRYQgs1XtIEsnMH.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mouse Memoirs';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mousememoirs/v19/t5tmIRoSNJ-PH0WNNgDYxdSb7Tk.ttf) format('truetype');
+}
